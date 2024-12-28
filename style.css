@@ -1,0 +1,120 @@
+body {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+    gap: 20px;
+    background-color: var(--darkblack-background);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+    /* outline: 2px solid blueviolet; */
+}
+:root {
+    --darkblack-background: rgb(67, 67, 68);
+    --XandO-text-color: rgb(67, 67, 68);
+    --CssScan-BoxShadow:rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+                        rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+                        rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+                        rgba(0, 0, 0, 0.06) 0px 2px 1px,
+                        rgba(0, 0, 0, 0.09) 0px 4px 2px,
+                        rgba(0, 0, 0, 0.09) 0px 8px 4px,
+                        rgba(0, 0, 0, 0.09) 0px 16px 8px,
+                        rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    --border-lightgray:rgb(67, 67, 68);
+    --text-shadow:0 1px 0 rgba(0,0,0,.1),
+                0 2px 0 rgba(0,0,0,.1),
+                0 3px 0 rgba(0,0,0,.1),
+                0 4px 0 rgba(0,0,0,.1),
+                0 5px 0 rgba(0,0,0,.1),
+                0 6px 1px rgba(0,0,0,.1),
+                0 0 5px rgba(0,0,0,.1),
+                0 1px 3px rgba(0,0,0,.3),
+                0 3px 5px rgba(0,0,0,.2),
+                0 5px 10px rgba(0,0,0,.25),
+                0 10px 10px rgba(0,0,0,.2),
+                0 20px 20px rgba(0,0,0,.15);
+}
+
+/* Real Code Starts Here 🗣️ */
+.title-name h1 {
+    color: darkkhaki;
+    text-shadow: var(--text-shadow);
+    text-align: center;
+}
+
+.container {
+    background-color: darkkhaki;
+    width: 600px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 30px;
+    box-shadow: var(--CssScan-BoxShadow);
+    text-shadow: var(--text-shadow);
+
+    & .box {
+        font-size: clamp(3rem, 10vw, 5rem);
+        border: solid 3px var(--border-lightgray);
+        color: var(--XandO-text-color);
+
+        /* Box 1,3,5,7,9 */
+        &:nth-child(1) {
+            background-color: lightgreen;
+            border-radius: 30px 0 0;
+        }
+        &:nth-child(3) {
+            border-radius: 0 30px 0 0;
+        }
+        &:nth-child(5) {
+            background-color: lightgreen;
+        }
+        &:nth-child(7) {
+            border-radius: 0 0 0 30px;
+        }
+        &:nth-child(9) {
+            background-color: lightgreen;
+            border-radius: 0 0 30px;
+        }
+
+        & p {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+
+
+/* Responsive Type of shi */
+@media (max-width: 768px) {
+    .container {
+        width: 97%;
+        max-width: 600px;
+        height: 500px;
+    }
+}
+@media (max-width: 425px) {
+    .container {
+        width: 95%;
+        height: 390px;
+    }
+}
+@media (max-width: 375px) {
+    .container {
+        width: 95%;
+        height: 370px;
+    }
+}
+@media (max-width: 320px) {
+    .container {
+        width: 95%;
+        height: 300px;
+    }
+}
